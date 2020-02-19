@@ -3,7 +3,8 @@ package com.example.taskauto.util
 import androidx.recyclerview.widget.DiffUtil
 import com.example.taskauto.model.room.CarEntity
 
-class DiffUtilCallBack : DiffUtil.ItemCallback<CarEntity>() {
+class DiffUtilCallBack() : DiffUtil.ItemCallback<CarEntity>() {
+
     override fun areItemsTheSame(oldItem: CarEntity, newItem: CarEntity): Boolean {
         return oldItem.id == newItem.id
     }

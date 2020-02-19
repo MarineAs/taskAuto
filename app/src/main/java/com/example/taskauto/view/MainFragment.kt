@@ -46,8 +46,9 @@ class MainFragment : Fragment(),
         observeObservers()
 
         btnAdd.setOnClickListener {
-            val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.fragmntContainer, AddFragment.getInstance(), "add")
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.fragmntContainer, AddFragment.getInstance(), "add")
                 ?.addToBackStack(null)
                 ?.commit()
         }
@@ -71,8 +72,8 @@ class MainFragment : Fragment(),
         val frEdit = AddFragment.getInstance()
 
         frEdit.editCar = adapter.currentList[position]
-        Log.d("111", "${position}")
-        Log.d("111", "iddd ${id}")
+//        Log.d("111", "${position}")
+//        Log.d("111", "iddd ${adapter.currentList.size}")
         (activity as? EditInterface)?.setEditData(adapter.currentList[position])
         activity?.supportFragmentManager
             ?.beginTransaction()

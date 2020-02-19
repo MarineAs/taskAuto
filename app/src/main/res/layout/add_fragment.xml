@@ -35,7 +35,7 @@
             android:background="@drawable/border"
             android:drawableEnd="@android:drawable/arrow_down_float"
             android:drawableRight="@android:drawable/arrow_down_float"
-            android:hint="Select"
+            android:hint="@string/select"
             android:onClick="@{ ()->viewModel.txtManClick() }"
             android:padding="5dp"
             android:text="@{viewModel.manName}"
@@ -100,13 +100,15 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/border"
             android:hint="@string/enter_a_year"
+            android:inputType="number"
             android:padding="5dp"
             android:text="@={viewModel.year}"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
             app:elevation="@dimen/cardview_compat_inset_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/textView5"
@@ -129,13 +131,15 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/border"
             android:hint="@string/enter_a_price"
+            android:inputType="number"
             android:padding="5dp"
             android:text="@={viewModel.price}"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
             app:elevation="@dimen/cardview_compat_inset_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/btnSave"

@@ -19,14 +19,14 @@ class CarListAdapter(private val onItemClickListener: ItemClickListener) :
         private val carDataBinding: ItemRecyclerBinding,
         onItemClickListener: ItemClickListener
     ) : RecyclerView.ViewHolder(carDataBinding.root) {
-
         init {
-            carDataBinding.clickHandler = onItemClickListener
+            itemView.setOnClickListener {
+                onItemClickListener.onItemClick(adapterPosition)
+            }
         }
 
         fun bind(item: CarEntity) {
             carDataBinding.carEntity = item
-            carDataBinding.position = adapterPosition
         }
     }
 
