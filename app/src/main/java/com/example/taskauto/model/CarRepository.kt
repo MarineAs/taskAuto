@@ -41,8 +41,9 @@ class CarRepository(
         return this.modelList
     }
 
-    fun getModelManName(manName: String): LiveData<List<String>>? {
-        return modelDao?.selectByManName(manName)
+    fun getModelsList(manName: String?): ModelEntity? {
+        val data = GetList(modelDao).execute(manName).get()
+        return data
     }
 
     companion object {
@@ -70,6 +71,11 @@ class CarRepository(
                 carDao?.deleteById(params[0])
             }
         }
-    }
 
+        class GetList(private var modelDao: ModelDao?) : AsyncTask<String?, Unit, ModelEntity>() {
+            override fun doInBackground(vararg params: String?): ModelEntity? {
+                return modelDao?.getStringManData(params[0])
+            }
+        }
+    }
 }

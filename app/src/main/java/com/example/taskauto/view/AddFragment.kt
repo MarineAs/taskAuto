@@ -1,7 +1,6 @@
 package com.example.taskauto.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,17 +50,19 @@ class AddFragment : Fragment(), ManInterface,
 
         viewModel.manName.observe(viewLifecycleOwner, Observer {
             if (it != editCar.manName) {
-                viewModel.setModelName(viewModel.modelList?.get(0))
-                editCar.manName=it
+                viewModel.setModelName(viewModel.modelList?.value?.get(0))
+                editCar.manName = it
             }
         })
 
         viewModel.clickedFragment.observe(viewLifecycleOwner, Observer {
             if (it == "DetailManFragment") {
                 openManufactFragment()
-                viewModel.clickedFragment.value = null
             }
             if (it == "DetailModelFragment") {
+                if (viewModel.modelList?.value.isNullOrEmpty()) {
+                    viewModel.getModel()
+                }
                 openModelFragment()
                 viewModel.clickedFragment.value = null
             }
@@ -77,14 +78,12 @@ class AddFragment : Fragment(), ManInterface,
         viewModel.emptyError?.observe(viewLifecycleOwner, Observer {
             if (it.isNotEmpty()) {
                 toast(it)
-                viewModel.emptyError?.value = ""
             }
         })
 
         viewModel.selectError?.observe(viewLifecycleOwner, Observer {
             if (it.isNotEmpty()) {
                 toast(it)
-                viewModel.selectError?.value = ""
             }
         })
 
@@ -105,7 +104,7 @@ class AddFragment : Fragment(), ManInterface,
     }
 
     private fun toast(string: String) {
-        Toast.makeText(context, string, Toast.LENGTH_LONG).show()
+        Toast.makeText(context, string, Toast.LENGTH_SHORT).show()
     }
 
     private fun openManufactFragment() {
@@ -119,7 +118,7 @@ class AddFragment : Fragment(), ManInterface,
     private fun openModelFragment() {
         val frModel: DetailModelFragment = DetailModelFragment.getInstance()
 
-        frModel.sendData(viewModel.modelList)
+        frModel.sendData(viewModel.modelList?.value)
         activity?.supportFragmentManager?.beginTransaction()
             ?.replace(R.id.fragmntContainer, frModel, "model")
             ?.addToBackStack(null)

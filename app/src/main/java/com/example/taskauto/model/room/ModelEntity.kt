@@ -9,6 +9,7 @@ import androidx.room.TypeConverters
 @Entity(
     tableName = "models"
 )
+@TypeConverters(ModelsConverter::class)
 data class ModelEntity(
 
     @PrimaryKey(autoGenerate = true)
@@ -19,7 +20,7 @@ data class ModelEntity(
 
     @TypeConverters(ModelsConverter::class)
     @ColumnInfo(name = "model_names")
-    var modelNames: List<String> = ArrayList()
+    var modelNames: List<String>? = null
 )
 
 

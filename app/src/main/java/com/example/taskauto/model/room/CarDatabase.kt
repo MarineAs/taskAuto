@@ -63,8 +63,29 @@ abstract class CarDatabase : RoomDatabase() {
                         1000
                     )
                 )
+                carDao.insert(
+                    CarEntity(
+                        null, "Mercedes", "Maybach",
+                        2000,
+                        100000
+                    )
+                )
+                carDao.insert(
+                    CarEntity(
+                        null, "Mercedes", "S-560",
+                        1990,
+                        50000
+                    )
+                )
+                carDao.insert(
+                    CarEntity(
+                        null, "Mercedes", "AMG",
+                        1990,
+                        50000
+                    )
+                )
                 modelDao.insertAll(
-                    ModelEntity(1, "BMW", arrayListOf("E60", "X5", "X6", "i3")),
+                    ModelEntity(1, "BMW", arrayListOf("E60", "X3", "X5", "i4")),
                     ModelEntity(2, "Tesla", arrayListOf("X", "S", "3", "P100D")),
                     ModelEntity(
                         3, "Mercedes",
@@ -94,14 +115,13 @@ abstract class CarDatabase : RoomDatabase() {
                             " EcoSport 2020"
                         )
                     ),
-                    ModelEntity(6, "BMW", arrayListOf("E60", "X5", "X6", "i3")),
-                    ModelEntity(7, "Tesla", arrayListOf("X", "S", "3", "P100D")),
+                    ModelEntity(7, "yy", arrayListOf("X", "S", "3", "P100D")),
                     ModelEntity(
-                        8, "Mercedes",
+                        8, "iii",
                         arrayListOf("AMG", "CLA", "Maybach", "S-560", "S-Class", "G", "E")
                     ),
                     ModelEntity(
-                        9, "Toyota",
+                        9, "yyy",
                         arrayListOf(
                             "Yaris",
                             "Fortuner",
@@ -114,7 +134,7 @@ abstract class CarDatabase : RoomDatabase() {
                         )
                     ),
                     ModelEntity(
-                        10, "Ford",
+                        10, "OiO",
                         arrayListOf(
                             " EcoSport",
                             "Endeavour",
@@ -125,7 +145,7 @@ abstract class CarDatabase : RoomDatabase() {
                         )
                     ),
                     ModelEntity(
-                        11, "Toyota",
+                        11, "Tiko",
                         arrayListOf(
                             "Yaris",
                             "Fortuner",
@@ -138,7 +158,7 @@ abstract class CarDatabase : RoomDatabase() {
                         )
                     ),
                     ModelEntity(
-                        12, "Ford",
+                        12, "KKK",
                         arrayListOf(
                             " EcoSport",
                             "Endeavour",
@@ -148,14 +168,13 @@ abstract class CarDatabase : RoomDatabase() {
                             " EcoSport 2020"
                         )
                     ),
-                    ModelEntity(13, "BMW", arrayListOf("E60", "X5", "X6", "i3")),
-                    ModelEntity(14, "Tesla", arrayListOf("X", "S", "3", "P100D")),
+                    ModelEntity(14, "LLL", arrayListOf("X", "S", "3", "P100D")),
                     ModelEntity(
-                        15, "Mercedes",
+                        15, "FFF",
                         arrayListOf("AMG", "CLA", "Maybach", "S-560", "S-Class", "G", "E")
                     ),
                     ModelEntity(
-                        16, "Toyota",
+                        16, "OOO",
                         arrayListOf(
                             "Yaris",
                             "Fortuner",
@@ -168,7 +187,7 @@ abstract class CarDatabase : RoomDatabase() {
                         )
                     ),
                     ModelEntity(
-                        17, "Ford",
+                        17, "KU",
                         arrayListOf(
                             " EcoSport",
                             "Endeavour",

@@ -11,13 +11,14 @@ class AddFragmentViewModel(
     application: Application
 ) :
     AndroidViewModel(application) {
-    private var repository: CarRepository = CarRepository.getInstance(application.applicationContext)
+    private var repository: CarRepository =
+        CarRepository.getInstance(application.applicationContext)
     var carId: MutableLiveData<String> = MutableLiveData()
     var manName: MutableLiveData<String> = MutableLiveData()
     var modelName: MutableLiveData<String> = MutableLiveData()
     var year: MutableLiveData<String> = MutableLiveData()
     var price: MutableLiveData<String> = MutableLiveData()
-    var modelList: List<String>? = ArrayList()
+    var modelList: MutableLiveData<List<String>>? = MutableLiveData()
     var emptyError: MutableLiveData<String>? = MutableLiveData()
     var selectError: MutableLiveData<String>? = MutableLiveData()
     var clickedFragment: MutableLiveData<String> = MutableLiveData()
@@ -51,20 +52,27 @@ class AddFragmentViewModel(
                 carId.value = ""
             }
             backstack.value = true
+            backstack.value = false
         } else {
             emptyError?.value = "Fill inputs correct info "
+            emptyError?.value = ""
         }
     }
 
     fun txtManClick() {
         clickedFragment.value = "DetailManFragment"
+        clickedFragment.value = null
+
     }
 
     fun txtModelClick() {
         if (this.manName.value != null) {
             clickedFragment.value = "DetailModelFragment"
+            clickedFragment.value = null
+
         } else {
             selectError?.value = "Select manufacturer"
+            selectError?.value = ""
         }
     }
 
@@ -85,7 +93,12 @@ class AddFragmentViewModel(
     }
 
     fun setModelsData(data: List<String>?) {
-        this.modelList = data
+        this.modelList?.value = data
+    }
+
+    fun getModel() {
+        val data = repository.getModelsList(this.manName.value)
+        this.modelList?.value = data?.modelNames
     }
 
     private fun createCarObject(

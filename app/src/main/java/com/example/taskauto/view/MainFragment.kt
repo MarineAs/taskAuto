@@ -72,8 +72,7 @@ class MainFragment : Fragment(),
         val frEdit = AddFragment.getInstance()
 
         frEdit.editCar = adapter.currentList[position]
-//        Log.d("111", "${position}")
-//        Log.d("111", "iddd ${adapter.currentList.size}")
+
         (activity as? EditInterface)?.setEditData(adapter.currentList[position])
         activity?.supportFragmentManager
             ?.beginTransaction()
