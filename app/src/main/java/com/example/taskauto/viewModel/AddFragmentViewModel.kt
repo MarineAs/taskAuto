@@ -31,23 +31,11 @@ class AddFragmentViewModel(
         ) {
             if (carId.value.isNullOrEmpty()) {
                 repository.insert(
-                    createCarObject(
-                        null,
-                        manName.value,
-                        modelName.value,
-                        year.value,
-                        price.value
-                    )
+                    createCarObject(null)
                 )
             } else {
                 repository.update(
-                    createCarObject(
-                        carId.value,
-                        manName.value,
-                        modelName.value,
-                        year.value,
-                        price.value
-                    )
+                    createCarObject(carId.value)
                 )
                 carId.value = ""
             }
@@ -101,14 +89,14 @@ class AddFragmentViewModel(
         this.modelList?.value = data?.modelNames
     }
 
-    private fun createCarObject(
-        id: String?,
-        manName: String?,
-        modelName: String?,
-        price: String?,
-        year: String?
-    ): CarEntity {
-        return CarEntity(id?.toInt(), manName, modelName, price?.toInt(), year?.toInt())
+    private fun createCarObject(id: String?): CarEntity {
+        return CarEntity(
+            id?.toInt(),
+            manName.value,
+            modelName.value,
+            price.value?.toInt(),
+            year.value?.toInt()
+        )
     }
 }
 
