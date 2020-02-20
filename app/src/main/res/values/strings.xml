@@ -9,4 +9,7 @@
     <string name="enter_a_price">Enter a price</string>
     <string name="enter_a_year">Enter a year</string>
     <string name="select">Select</string>
+    <string name="id">Id</string>
+    <string name="add">Add</string>
+    <string name="cars">Cars</string>
 </resources>

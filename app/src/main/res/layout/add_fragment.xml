@@ -22,7 +22,7 @@
             android:layout_marginTop="16dp"
             android:padding="5dp"
             android:text="@string/manufacturer"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +53,7 @@
             android:layout_marginTop="17dp"
             android:padding="5dp"
             android:text="@string/model"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             app:elevation="@dimen/cardview_compat_inset_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -86,7 +86,7 @@
             android:layout_marginTop="17dp"
             android:padding="5dp"
             android:text="@string/year"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             app:elevation="@dimen/cardview_compat_inset_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -100,6 +100,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/border"
             android:hint="@string/enter_a_year"
+            android:importantForAutofill="no"
             android:inputType="number"
             android:padding="5dp"
             android:text="@={viewModel.year}"
@@ -107,8 +108,7 @@
             app:elevation="@dimen/cardview_compat_inset_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
             android:id="@+id/textView5"
@@ -117,7 +117,7 @@
             android:layout_marginTop="17dp"
             android:padding="5dp"
             android:text="@string/price"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             app:elevation="@dimen/cardview_compat_inset_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -131,6 +131,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/border"
             android:hint="@string/enter_a_price"
+            android:importantForAutofill="no"
             android:inputType="number"
             android:padding="5dp"
             android:text="@={viewModel.price}"
@@ -138,8 +139,7 @@
             app:elevation="@dimen/cardview_compat_inset_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <Button
             android:id="@+id/btnSave"
@@ -152,6 +152,9 @@
             android:layout_marginBottom="16dp"
             android:onClick="@{ ()->viewModel.btnSaveClick() }"
             android:text="@string/save"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

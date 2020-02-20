@@ -54,7 +54,7 @@ class AddFragmentViewModel(
             backstack.value = true
             backstack.value = false
         } else {
-            emptyError?.value = "Fill inputs correct info "
+            emptyError?.value = "Fill correct info "
             emptyError?.value = ""
         }
     }
