@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-
+<Tasdasdsdasddd>
     <FrameLayout
         android:id="@+id/fragmntContainer"
         android:layout_width="match_parent"
