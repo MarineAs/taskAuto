@@ -14,5 +14,5 @@ class DiffUtilCallBack() : DiffUtil.ItemCallback<CarEntity>() {
                 oldItem.manName == newItem.manName && oldItem.modelName == newItem.modelName
     }
     /**
-     * ]]']']']'a]sd]asd]'d]a*/
+     * ]]']']']'a]sd]assdsdsdd]'d]a*/
 }
