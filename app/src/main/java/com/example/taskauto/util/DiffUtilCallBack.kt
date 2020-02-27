@@ -13,4 +13,6 @@ class DiffUtilCallBack() : DiffUtil.ItemCallback<CarEntity>() {
         return oldItem.price == newItem.price && oldItem.year == newItem.year &&
                 oldItem.manName == newItem.manName && oldItem.modelName == newItem.modelName
     }
+    /**
+     * ]]']']']'a]sd]assdsdsdd]'d]a*/
 }
